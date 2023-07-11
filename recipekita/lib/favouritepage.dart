@@ -1,0 +1,14 @@
+import 'package:flutter/cupertino.dart';
+
+class FavouritePage extends StatelessWidget {
+  const FavouritePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+        child: Text("Favoourite"),
+      ),
+    );
+  }
+}
