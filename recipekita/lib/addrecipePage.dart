@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class AddRecpiePage extends StatefulWidget {
   const AddRecpiePage({super.key});
@@ -59,7 +58,7 @@ class _AddRecpiePage extends State<AddRecpiePage> {
       'title' : title,
       'Ingredients' : ingredients,
       'type' : type,
-      'cokingtime' : cookingtime,
+      'cookingtime' : cookingtime,
       'publisher' : useremail
     });
   }
@@ -73,13 +72,14 @@ class _AddRecpiePage extends State<AddRecpiePage> {
           child: Form(
             //Add form to key to the Form Widget
             key: _formKey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+            child: ListView(
+
               children: [
-                const Text(
-                  "Add Recipe",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w800),
+                Center(
+                  child: const Text(
+                    "Add Recipe",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w800),
+                  ),
                 ),
                 const SizedBox(
                   height: 20,
@@ -117,6 +117,7 @@ class _AddRecpiePage extends State<AddRecpiePage> {
                     }
                     return null;
                   },
+                  maxLines: 5,
                   decoration: const InputDecoration(
                     hintText: 'Ingredients',
                     focusedBorder: UnderlineInputBorder(
@@ -150,6 +151,7 @@ class _AddRecpiePage extends State<AddRecpiePage> {
                     ),
                   ),
                 ),
+
                 const SizedBox(
                   height: 20,
                 ),
